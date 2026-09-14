@@ -1,0 +1,8 @@
+/* Pretendard Variable v1.3.9 — 로컬 번들. 원본: dist/web/variable/pretendardvariable.css (src 경로만 로컬로). 출처·라이선스: SOURCE.txt, LICENSE */
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url('./PretendardVariable.woff2') format('woff2-variations');
+}

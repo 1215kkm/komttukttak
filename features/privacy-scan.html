@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>내 컴퓨터에 남은 개인정보 찾아 지우는 법 — 컴뚝딱</title>
+<meta name="description" content="PC를 넘기기 전 주민번호·전화번호·계좌가 적힌 파일을 탐색기 내용 검색으로 찾는 법과 초기화 순서. 컴뚝딱 개인정보 흔적 검사기(출시 예정)의 로컬 검색.">
+<link rel="canonical" href="https://1215kkm.github.io/komttukttak/features/privacy-scan">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="컴뚝딱">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="내 컴퓨터에 남은 개인정보 찾아 지우는 법 — 컴뚝딱">
+<meta property="og:description" content="PC를 넘기기 전 주민번호·전화번호·계좌가 적힌 파일을 탐색기 내용 검색으로 찾는 법과 초기화 순서. 컴뚝딱 개인정보 흔적 검사기(출시 예정)의 로컬 검색.">
+<meta property="og:url" content="https://1215kkm.github.io/komttukttak/features/privacy-scan">
+<meta property="og:image" content="https://1215kkm.github.io/komttukttak/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- naver-site-verification: 네이버 서치어드바이저 등록 후 메타 태그를 여기에 (CEO 결정 후) -->
+<!-- google-site-verification: 구글 서치콘솔 등록 후 메타 태그를 여기에 (CEO 결정 후) -->
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/vendor/pretendard/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/vendor/pretendard/pretendard.css">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://1215kkm.github.io/komttukttak/"},{"@type":"ListItem","position":2,"name":"개인정보 흔적 검사기","item":"https://1215kkm.github.io/komttukttak/features/privacy-scan.html"}]}</script>
+<!-- analytics: CEO 결정 후 (현재 외부 추적 스크립트 없음) -->
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="../" aria-label="컴뚝딱 홈">
+      <span class="logo-mark" aria-hidden="true"><i data-lucide="hammer" aria-hidden="true"></i></span>
+      <span>컴뚝딱</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav"><i data-lucide="menu" aria-hidden="true"></i></button>
+    <nav class="nav" id="site-nav" aria-label="주 메뉴">
+      <a href="../#features" aria-current="page">기능</a>
+      <a href="../blog/pc-spec-check">블로그</a>
+      <a href="../classroom/computer-lab">컴퓨터실</a>
+      <a href="../#faq">FAQ</a>
+      <a href="../install">설치 안내</a>
+      <a class="btn btn-primary" href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="header"><i data-lucide="bell" aria-hidden="true"></i>출시 알림 받기</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<div class="container">
+  <article class="article">
+    <header class="article-head">
+      <ol class="breadcrumb"><li><a href="../">홈</a></li><li><a href="../#features">기능</a></li><li>개인정보 흔적 검사기</li></ol>
+      <div class="status-line"><span class="chip chip-muted"><i data-lucide="clock" aria-hidden="true"></i>준비중</span><span class="chip chip-purple"><i data-lucide="shield" aria-hidden="true"></i>10 · 개인정보 흔적 검사기</span></div>
+      <h1>내 컴퓨터에 남은 개인정보 찾아 지우는 법 — 컴뚝딱</h1>
+      <p class="sub">PC를 넘기기 전 주민번호·전화번호·계좌가 적힌 파일을 탐색기 내용 검색으로 찾는 법과 초기화 순서. 컴뚝딱 개인정보 흔적 검사기(출시 예정)의 로컬 검색.</p>
+    </header>
+
+    <h2>이런 상황이면</h2>
+    <ul class="pain"><li>중고로 팔기 전에 뭐가 남았는지 모르겠다.</li><li>스캔한 신분증 사진이 어느 폴더엔가 있다.</li><li>회사 PC 반납 전에 점검해야 한다.</li></ul>
+
+    <h2>1. 윈도우 기본 기능으로 (무료·설치 없음)</h2>
+    <p>탐색기 검색이 파일 '내용'까지 볼 수 있습니다. 느리지만 됩니다.</p>
+    <ol class="steps"><li>탐색기 → 검색 옵션 → '파일 내용' 체크 → 검색창에 내 전화번호·이름 입력 (시간이 걸립니다).</li><li>다운로드·문서·사진 폴더에서 '신분증', '통장', '계약' 검색.</li><li>브라우저 저장된 비밀번호·자동완성 삭제 (각 브라우저 설정 → 개인정보).</li><li>넘기기 전엔 설정 → 복구 → PC 초기화 → '드라이브 정리' 옵션 (시간이 오래 걸리지만 복구가 어려워집니다).</li></ol>
+    <p>이미지 파일 안의 주민번호는 탐색기가 못 찾습니다. 파일명과 문서 안 패턴을 훑는 게 다음입니다.</p>
+
+    <h2>2. 컴뚝딱으로 하는 법 (출시 예정)</h2>
+    <p>컴뚝딱 '개인정보 흔적 검사기'는 출시 예정입니다.</p>
+    <ul><li>주민번호·전화번호·카드번호 패턴을 문서와 파일명에서 로컬 검색</li><li>찾은 파일 목록만 보여 주고, 삭제는 사용자가 직접</li><li>검색 결과는 PC 밖으로 나가지 않습니다 — 전송 코드가 0줄이라 나갈 수가 없습니다</li></ul>
+    <div class="callout callout-warning"><i data-lucide="triangle-alert" aria-hidden="true"></i><p>찾지 못한 파일이 없다는 뜻은 아닙니다. 넘기기 전 초기화는 반드시 하세요.</p></div>
+
+    <section class="cta-box" id="notify" aria-label="출시 알림">
+  <div class="status-line"><span class="chip chip-muted"><i data-lucide="clock" aria-hidden="true"></i>준비중</span><h2>출시 예정 · 알림 받기</h2></div>
+  <p>이메일을 받지 않습니다. 대신 GitHub 에서 새 버전 알림을 켜 두면 출시되는 날 GitHub 알림으로 옵니다.</p>
+  <ol class="steps">
+    <li>GitHub 레포 <a href="https://github.com/1215kkm/komttukttak" rel="noopener">1215kkm/komttukttak</a> 를 엽니다.</li>
+    <li>오른쪽 위 <strong>Watch</strong> → <strong>Custom</strong> → <strong>Releases</strong> 만 체크 → Apply.</li>
+    <li>새 버전이 올라오면 GitHub 알림(또는 GitHub 계정 이메일)으로 옵니다. 이미 설치했다면 앱이 자동으로 업데이트됩니다.</li>
+  </ol>
+  <div class="btn-row">
+    <a class="btn btn-primary btn-lg" href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="feature-soon"><i data-lucide="bell" aria-hidden="true"></i>출시 알림 받기</a>
+    <a class="btn btn-outline btn-lg" href="https://github.com/1215kkm/komttukttak" rel="noopener"><i data-lucide="external-link" aria-hidden="true"></i>GitHub 레포 보기</a>
+    <a class="btn btn-outline btn-lg" href="../install"><i data-lucide="shield-question" aria-hidden="true"></i>설치 안내</a>
+  </div>
+  <ul class="trust"><li><i data-lucide="user-x" aria-hidden="true"></i><span>회원가입 없음</span></li><li><i data-lucide="megaphone-off" aria-hidden="true"></i><span>광고 없음</span></li><li><i data-lucide="lock" aria-hidden="true"></i><span>검사 결과는 내 PC 안에만</span></li></ul>
+</section>
+
+    
+
+    <h2>같이 보기</h2>
+    <div class="related"><a class="card card-hover" href="../features/used-pc-check"><span class="num">09</span><h3>중고 PC 검사기</h3><p>SSD수명/배터리/GPU/화면/포트 종합검사</p></a><a class="card card-hover" href="../features/photo-organizer"><span class="num">11</span><h3>사진 정리</h3><p>수만 장 사진을 날짜/장소/유사사진별 정리 (인물 분류는 로컬 모델)</p></a></div>
+  </article>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 컴뚝딱 · 무료 PC 사양 확인 · PC 도구 16개 순차 공개</p>
+    <div class="links">
+      <a href="../install">설치 안내</a>
+      <a href="../privacy">개인정보처리방침</a>
+      <a href="https://github.com/1215kkm/komttukttak" rel="noopener">GitHub</a>
+      <a href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="footer">출시 알림</a>
+      <a href="https://crownyclass.com/" rel="noopener">CrownyClass</a>
+    </div>
+  </div>
+</footer>
+<script src="../assets/vendor/lucide/lucide.min.js" defer></script>
+<script src="../scripts/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+lucide.min.js — Lucide Icons v0.460.0, UMD 빌드 (앱 app/index.html 과 같은 버전)
+출처: https://cdn.jsdelivr.net/npm/lucide@0.460.0/dist/umd/lucide.min.js
+      (= npm 패키지 lucide@0.460.0 의 dist/umd/lucide.min.js, https://github.com/lucide-icons/lucide)
+라이선스: ISC — 동봉 LICENSE
+받은 날: 2026-09-14
+갱신 방법: app/vendor/lucide/lucide.min.js 가 있으면 `node scripts/build-pages.mjs` 가 그 파일을 여기로 복사한다(앱·사이트 버전 일치).
+          없으면 위 URL 을 버전만 바꿔 받고 이 파일의 버전·날짜를 고친다.

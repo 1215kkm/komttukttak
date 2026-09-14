@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>인터넷 느리거나 끊길 때 원인 찾는 법 — 컴뚝딱</title>
+<meta name="description" content="ping·DNS·공유기 재시작으로 와이파이·랜 문제가 PC인지 공유기인지 통신사인지 나누어 보는 법. 컴뚝딱 인터넷 문제 진단기(출시 예정).">
+<link rel="canonical" href="https://1215kkm.github.io/komttukttak/features/network-diag">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="컴뚝딱">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="인터넷 느리거나 끊길 때 원인 찾는 법 — 컴뚝딱">
+<meta property="og:description" content="ping·DNS·공유기 재시작으로 와이파이·랜 문제가 PC인지 공유기인지 통신사인지 나누어 보는 법. 컴뚝딱 인터넷 문제 진단기(출시 예정).">
+<meta property="og:url" content="https://1215kkm.github.io/komttukttak/features/network-diag">
+<meta property="og:image" content="https://1215kkm.github.io/komttukttak/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- naver-site-verification: 네이버 서치어드바이저 등록 후 메타 태그를 여기에 (CEO 결정 후) -->
+<!-- google-site-verification: 구글 서치콘솔 등록 후 메타 태그를 여기에 (CEO 결정 후) -->
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/vendor/pretendard/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/vendor/pretendard/pretendard.css">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://1215kkm.github.io/komttukttak/"},{"@type":"ListItem","position":2,"name":"인터넷 문제 진단기","item":"https://1215kkm.github.io/komttukttak/features/network-diag.html"}]}</script>
+<!-- analytics: CEO 결정 후 (현재 외부 추적 스크립트 없음) -->
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="../" aria-label="컴뚝딱 홈">
+      <span class="logo-mark" aria-hidden="true"><i data-lucide="hammer" aria-hidden="true"></i></span>
+      <span>컴뚝딱</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav"><i data-lucide="menu" aria-hidden="true"></i></button>
+    <nav class="nav" id="site-nav" aria-label="주 메뉴">
+      <a href="../#features" aria-current="page">기능</a>
+      <a href="../blog/pc-spec-check">블로그</a>
+      <a href="../classroom/computer-lab">컴퓨터실</a>
+      <a href="../#faq">FAQ</a>
+      <a href="../install">설치 안내</a>
+      <a class="btn btn-primary" href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="header"><i data-lucide="bell" aria-hidden="true"></i>출시 알림 받기</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<div class="container">
+  <article class="article">
+    <header class="article-head">
+      <ol class="breadcrumb"><li><a href="../">홈</a></li><li><a href="../#features">기능</a></li><li>인터넷 문제 진단기</li></ol>
+      <div class="status-line"><span class="chip chip-muted"><i data-lucide="clock" aria-hidden="true"></i>준비중</span><span class="chip chip-purple"><i data-lucide="wifi" aria-hidden="true"></i>08 · 인터넷 문제 진단기</span></div>
+      <h1>인터넷 느리거나 끊길 때 원인 찾는 법 — 컴뚝딱</h1>
+      <p class="sub">ping·DNS·공유기 재시작으로 와이파이·랜 문제가 PC인지 공유기인지 통신사인지 나누어 보는 법. 컴뚝딱 인터넷 문제 진단기(출시 예정).</p>
+    </header>
+
+    <h2>이런 상황이면</h2>
+    <ul class="pain"><li>와이파이는 연결됐다는데 인터넷이 안 된다.</li><li>게임만 끊긴다.</li><li>통신사에 전화하면 &quot;재부팅 해보세요&quot;만 한다.</li></ul>
+
+    <h2>1. 윈도우 기본 기능으로 (무료·설치 없음)</h2>
+    <p>어디서 끊기는지를 나누는 게 전부입니다 — PC → 공유기 → 통신사 → DNS.</p>
+    <ol class="steps"><li>cmd → ping 8.8.8.8 -n 10: 응답이 오면 회선은 정상. '요청 시간이 만료되었습니다'가 반복되면 공유기·회선 문제.</li><li>ping google.com 은 안 되는데 위가 되면 DNS 문제 → 설정 → 네트워크 → 어댑터 → DNS 서버를 8.8.8.8 로.</li><li>공유기·모뎀 전원을 30초 끄고 켜기 — 가장 많은 문제가 여기서 끝납니다.</li><li>설정 → 네트워크 → 고급 네트워크 설정 → 네트워크 초기화 (마지막 수단, 재부팅 필요).</li></ol>
+    <p>핑 결과를 읽는 것 자체가 낯설면, 그걸 그림으로 바꿔 주는 게 다음입니다.</p>
+
+    <h2>2. 컴뚝딱으로 하는 법 (출시 예정)</h2>
+    <p>컴뚝딱 '인터넷 문제 진단기'는 출시 예정입니다.</p>
+    <ul><li>PC → 공유기 → 통신사 → DNS 순서로 어디서 끊기는지 단계별 카드</li><li>핑·패킷손실·Wi-Fi 신호를 1분 측정해 숫자로</li><li>공유기 문제로 판정될 때만 공유기·통신·출장기사 안내</li></ul>
+    <div class="callout callout-info"><i data-lucide="info" aria-hidden="true"></i><p>속도 측정 결과는 그 순간 값입니다. 한 번 측정으로 '회선이 나쁘다'고 말하지 않습니다.</p></div>
+
+    <section class="cta-box" id="notify" aria-label="출시 알림">
+  <div class="status-line"><span class="chip chip-muted"><i data-lucide="clock" aria-hidden="true"></i>준비중</span><h2>출시 예정 · 알림 받기</h2></div>
+  <p>이메일을 받지 않습니다. 대신 GitHub 에서 새 버전 알림을 켜 두면 출시되는 날 GitHub 알림으로 옵니다.</p>
+  <ol class="steps">
+    <li>GitHub 레포 <a href="https://github.com/1215kkm/komttukttak" rel="noopener">1215kkm/komttukttak</a> 를 엽니다.</li>
+    <li>오른쪽 위 <strong>Watch</strong> → <strong>Custom</strong> → <strong>Releases</strong> 만 체크 → Apply.</li>
+    <li>새 버전이 올라오면 GitHub 알림(또는 GitHub 계정 이메일)으로 옵니다. 이미 설치했다면 앱이 자동으로 업데이트됩니다.</li>
+  </ol>
+  <div class="btn-row">
+    <a class="btn btn-primary btn-lg" href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="feature-soon"><i data-lucide="bell" aria-hidden="true"></i>출시 알림 받기</a>
+    <a class="btn btn-outline btn-lg" href="https://github.com/1215kkm/komttukttak" rel="noopener"><i data-lucide="external-link" aria-hidden="true"></i>GitHub 레포 보기</a>
+    <a class="btn btn-outline btn-lg" href="../install"><i data-lucide="shield-question" aria-hidden="true"></i>설치 안내</a>
+  </div>
+  <ul class="trust"><li><i data-lucide="user-x" aria-hidden="true"></i><span>회원가입 없음</span></li><li><i data-lucide="megaphone-off" aria-hidden="true"></i><span>광고 없음</span></li><li><i data-lucide="lock" aria-hidden="true"></i><span>검사 결과는 내 PC 안에만</span></li></ul>
+</section>
+
+    
+
+    <h2>같이 보기</h2>
+    <div class="related"><a class="card card-hover" href="../features/driver-fix"><span class="num">07</span><h3>드라이버 문제 해결사</h3><p>장치 오류 자동진단, 필요한 드라이버 식별</p></a><a class="card card-hover" href="../features/used-pc-check"><span class="num">09</span><h3>중고 PC 검사기</h3><p>SSD수명/배터리/GPU/화면/포트 종합검사</p></a></div>
+  </article>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 컴뚝딱 · 무료 PC 사양 확인 · PC 도구 16개 순차 공개</p>
+    <div class="links">
+      <a href="../install">설치 안내</a>
+      <a href="../privacy">개인정보처리방침</a>
+      <a href="https://github.com/1215kkm/komttukttak" rel="noopener">GitHub</a>
+      <a href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="footer">출시 알림</a>
+      <a href="https://crownyclass.com/" rel="noopener">CrownyClass</a>
+    </div>
+  </div>
+</footer>
+<script src="../assets/vendor/lucide/lucide.min.js" defer></script>
+<script src="../scripts/site.js" defer></script>
+</body>
+</html>

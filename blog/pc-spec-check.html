@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>내 PC 사양 확인하는 법 — 윈도우 기본 기능 4가지 (3초 만에 한 화면으로 보는 법까지) — 컴뚝딱</title>
+<meta name="description" content="설정·dxdiag·msinfo32·작업 관리자로 CPU·RAM·그래픽카드·SSD 여부를 확인하는 법과, 컴뚝딱으로 네 화면을 한 화면·카드 한 장으로 보는 법.">
+<link rel="canonical" href="https://1215kkm.github.io/komttukttak/blog/pc-spec-check">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="컴뚝딱">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="내 PC 사양 확인하는 법 — 윈도우 기본 기능 4가지 (3초 만에 한 화면으로 보는 법까지) — 컴뚝딱">
+<meta property="og:description" content="설정·dxdiag·msinfo32·작업 관리자로 CPU·RAM·그래픽카드·SSD 여부를 확인하는 법과, 컴뚝딱으로 네 화면을 한 화면·카드 한 장으로 보는 법.">
+<meta property="og:url" content="https://1215kkm.github.io/komttukttak/blog/pc-spec-check">
+<meta property="og:image" content="https://1215kkm.github.io/komttukttak/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- naver-site-verification: 네이버 서치어드바이저 등록 후 메타 태그를 여기에 (CEO 결정 후) -->
+<!-- google-site-verification: 구글 서치콘솔 등록 후 메타 태그를 여기에 (CEO 결정 후) -->
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/vendor/pretendard/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/vendor/pretendard/pretendard.css">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"내 PC 사양 확인하는 법 — 윈도우 기본 기능 4가지 (3초 만에 한 화면으로 보는 법까지)","description":"설정·dxdiag·msinfo32·작업 관리자로 CPU·RAM·그래픽카드·SSD 여부를 확인하는 법과, 컴뚝딱으로 네 화면을 한 화면·카드 한 장으로 보는 법.","datePublished":"2026-09-14","dateModified":"2026-09-14","inLanguage":"ko","author":{"@type":"Organization","name":"컴뚝딱"},"publisher":{"@type":"Organization","name":"컴뚝딱","logo":{"@type":"ImageObject","url":"https://1215kkm.github.io/komttukttak/assets/favicon.svg"}},"mainEntityOfPage":"https://1215kkm.github.io/komttukttak/blog/pc-spec-check.html","image":"https://1215kkm.github.io/komttukttak/assets/og-image.png"}</script>
+<!-- analytics: CEO 결정 후 (현재 외부 추적 스크립트 없음) -->
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="../" aria-label="컴뚝딱 홈">
+      <span class="logo-mark" aria-hidden="true"><i data-lucide="hammer" aria-hidden="true"></i></span>
+      <span>컴뚝딱</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav"><i data-lucide="menu" aria-hidden="true"></i></button>
+    <nav class="nav" id="site-nav" aria-label="주 메뉴">
+      <a href="../#features">기능</a>
+      <a href="../blog/pc-spec-check" aria-current="page">블로그</a>
+      <a href="../classroom/computer-lab">컴퓨터실</a>
+      <a href="../#faq">FAQ</a>
+      <a href="../install">설치 안내</a>
+      <a class="btn btn-primary" href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="header"><i data-lucide="bell" aria-hidden="true"></i>출시 알림 받기</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<div class="container">
+  <article class="article">
+    <header class="article-head">
+      <ol class="breadcrumb"><li><a href="../">홈</a></li><li><a href="../#blog">해결법 글</a></li><li>내 PC 사양 확인하는 법</li></ol>
+      <h1>내 PC 사양 확인하는 법 — 윈도우 기본 기능 4가지 (3초 만에 한 화면으로 보는 법까지)</h1>
+      <p class="meta"><span><i data-lucide="calendar" aria-hidden="true"></i> 2026-09-14</span><span><i data-lucide="user" aria-hidden="true"></i> 컴뚝딱</span><a class="chip chip-purple" href="../features/pc-spec"><i data-lucide="cpu" aria-hidden="true"></i>내 PC 사양 보기</a></p>
+    </header>
+    <p>게임 사양 되는지 물어보려는데 내 컴퓨터 사양을 모른다.<br>중고로 팔려고 글 쓰는데 그래픽카드 이름을 어디서 보는지 모르겠다.<br>수리기사님이 "사양 좀 알려주세요" 하는데 화면 어디를 봐야 할지 막막하다.</p>
+<p>셋 중 하나면 이 글로 끝납니다. 먼저 윈도우에 이미 들어 있는 방법부터, 설치 없이.</p>
+<h2>1. 윈도우 기본 기능으로 PC 사양 확인하기 (무료·설치 없음)</h2>
+<h3>방법 1. 설정 → 정보 — CPU·RAM·윈도우 버전</h3>
+<p><code>Win + I</code> → 시스템 → 정보. 프로세서(CPU), 설치된 RAM, 윈도우 에디션·버전·OS 빌드가 나옵니다. 그래픽카드는 여기 없습니다.</p>
+<h3>방법 2. dxdiag — 그래픽카드까지</h3>
+<p><code>Win + R</code> → <code>dxdiag</code> 입력 → 엔터. '시스템' 탭에 CPU·메모리, '디스플레이' 탭에 그래픽카드 이름과 메모리. 게임 사양 물을 때 가장 많이 쓰는 화면입니다.</p>
+<h3>방법 3. msinfo32 — 메인보드·바이오스</h3>
+<p><code>Win + R</code> → <code>msinfo32</code>. 시스템 요약에 메인보드 제조사·모델, BIOS 버전까지. 램 추가하려고 슬롯 확인할 때 씁니다.</p>
+<h3>방법 4. 작업 관리자 → 성능 — SSD인지 HDD인지</h3>
+<p><code>Ctrl + Shift + Esc</code> → 성능 탭. 왼쪽 '디스크'를 누르면 SSD/HDD 종류, '메모리'를 누르면 속도(MHz)와 슬롯 사용 개수. 위 세 방법엔 없는 정보입니다.</p>
+<p>정리하면 CPU·RAM은 어디서든 보이지만, 그래픽카드는 dxdiag, 메인보드는 msinfo32, SSD 여부는 작업 관리자 — 네 군데를 돌아야 다 모입니다. 캡처해서 보내려면 네 장이죠.</p>
+<h2>2. 네 군데 돌기 번거로우면 — 컴뚝딱</h2>
+<p>컴뚝딱은 무료 PC 유틸 모음이고, '내 PC 사양 보기'를 켜면 CPU·RAM·그래픽카드·저장장치(SSD/HDD)·윈도우 버전·IP·PC 이름이 한 화면에 나옵니다. 설치 파일 하나, 회원가입 없음, 결과는 내 PC 밖으로 나가지 않습니다.</p>
+<ul><li>텍스트로 복사 → 카톡·게시판에 그대로 붙이기</li><li>이미지 카드로 복사 → "내 사양 봐줘" 글에 캡처 네 장 대신 한 장</li></ul>
+<section class="cta-box" aria-label="출시 알림">
+  <h2>컴뚝딱 출시 알림 받기</h2>
+  <p>첫 버전을 준비하고 있습니다. GitHub Releases 알림을 켜 두면 올라오는 날 GitHub 알림으로 옵니다. 이메일은 받지 않습니다.</p>
+  <div class="btn-row">
+    <a class="btn btn-primary btn-lg" href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="blog-pc-spec-check"><i data-lucide="bell" aria-hidden="true"></i>출시 알림 받기</a>
+    <a class="btn btn-outline btn-lg" href="../install"><i data-lucide="shield-question" aria-hidden="true"></i>설치 안내</a>
+  </div>
+  <ul class="trust"><li><i data-lucide="user-x" aria-hidden="true"></i><span>회원가입 없음</span></li><li><i data-lucide="megaphone-off" aria-hidden="true"></i><span>광고 없음</span></li><li><i data-lucide="lock" aria-hidden="true"></i><span>검사 결과는 내 PC 안에만</span></li></ul>
+</section>
+<h2>3. 저장장치가 'HDD'로 나왔다면</h2>
+<p>사양 보기엔 위험 판정이 없습니다. 다만 저장장치 칸이 HDD(하드디스크)이고 5년 넘게 쓴 PC라면, 같은 앱 안의 'HDD 건강검진'(출시 예정)을 한 번 돌려 보세요. 결과는 🟢🟡🔴 세 가지로 나오고, 🟡은 "중요 파일 백업부터" 안내만, 🔴일 때만 복구업체 견적 버튼이 보입니다. 겁주는 문구 없이, 디스크가 스스로 기록한 SMART 값(디스크 건강 수치) 그대로입니다.</p>
+<p>하드 배드섹터를 명령어로 직접 확인하는 법은 다음 글에서: <a href="hdd-bad-sector-check">하드디스크 배드섹터 확인하는 법</a></p>
+    <h2>다음 글</h2><div class="related"><a class="card card-hover" href="../blog/hdd-bad-sector-check"><h3>하드디스크 배드섹터 확인하는 법 — chkdsk부터 SMART까지 (윈도우 기본 기능, 무료)</h3><p>드라이브 오류 검사·chkdsk /r·PowerShell SMART 조회로 배드섹터를 확인하는 법과, 결과가 🟢🟡🔴일 때 각각 할 일. 컴뚝딱 HDD 건강검진(출시 예정)은 읽기만 합니다.</p></a></div>
+  </article>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 컴뚝딱 · 무료 PC 사양 확인 · PC 도구 16개 순차 공개</p>
+    <div class="links">
+      <a href="../install">설치 안내</a>
+      <a href="../privacy">개인정보처리방침</a>
+      <a href="https://github.com/1215kkm/komttukttak" rel="noopener">GitHub</a>
+      <a href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="footer">출시 알림</a>
+      <a href="https://crownyclass.com/" rel="noopener">CrownyClass</a>
+    </div>
+  </div>
+</footer>
+<script src="../assets/vendor/lucide/lucide.min.js" defer></script>
+<script src="../scripts/site.js" defer></script>
+</body>
+</html>

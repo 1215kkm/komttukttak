@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>컴퓨터 느려졌을 때 원인 찾는 법 — 컴뚝딱</title>
+<meta name="description" content="작업 관리자·시작 앱·저장소로 느려진 원인을 직접 찾는 법과, 컴뚝딱 PC 건강검진(출시 예정)이 RAM·SSD·CPU·시작프로그램을 한 번에 보는 방식.">
+<link rel="canonical" href="https://1215kkm.github.io/komttukttak/features/pc-health">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="컴뚝딱">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="컴퓨터 느려졌을 때 원인 찾는 법 — 컴뚝딱">
+<meta property="og:description" content="작업 관리자·시작 앱·저장소로 느려진 원인을 직접 찾는 법과, 컴뚝딱 PC 건강검진(출시 예정)이 RAM·SSD·CPU·시작프로그램을 한 번에 보는 방식.">
+<meta property="og:url" content="https://1215kkm.github.io/komttukttak/features/pc-health">
+<meta property="og:image" content="https://1215kkm.github.io/komttukttak/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- naver-site-verification: 네이버 서치어드바이저 등록 후 메타 태그를 여기에 (CEO 결정 후) -->
+<!-- google-site-verification: 구글 서치콘솔 등록 후 메타 태그를 여기에 (CEO 결정 후) -->
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/vendor/pretendard/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/vendor/pretendard/pretendard.css">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://1215kkm.github.io/komttukttak/"},{"@type":"ListItem","position":2,"name":"PC 건강검진","item":"https://1215kkm.github.io/komttukttak/features/pc-health.html"}]}</script>
+<!-- analytics: CEO 결정 후 (현재 외부 추적 스크립트 없음) -->
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="../" aria-label="컴뚝딱 홈">
+      <span class="logo-mark" aria-hidden="true"><i data-lucide="hammer" aria-hidden="true"></i></span>
+      <span>컴뚝딱</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav"><i data-lucide="menu" aria-hidden="true"></i></button>
+    <nav class="nav" id="site-nav" aria-label="주 메뉴">
+      <a href="../#features" aria-current="page">기능</a>
+      <a href="../blog/pc-spec-check">블로그</a>
+      <a href="../classroom/computer-lab">컴퓨터실</a>
+      <a href="../#faq">FAQ</a>
+      <a href="../install">설치 안내</a>
+      <a class="btn btn-primary" href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="header"><i data-lucide="bell" aria-hidden="true"></i>출시 알림 받기</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<div class="container">
+  <article class="article">
+    <header class="article-head">
+      <ol class="breadcrumb"><li><a href="../">홈</a></li><li><a href="../#features">기능</a></li><li>PC 건강검진</li></ol>
+      <div class="status-line"><span class="chip chip-muted"><i data-lucide="clock" aria-hidden="true"></i>준비중</span><span class="chip chip-purple"><i data-lucide="activity" aria-hidden="true"></i>04 · PC 건강검진</span></div>
+      <h1>컴퓨터 느려졌을 때 원인 찾는 법 — 컴뚝딱</h1>
+      <p class="sub">작업 관리자·시작 앱·저장소로 느려진 원인을 직접 찾는 법과, 컴뚝딱 PC 건강검진(출시 예정)이 RAM·SSD·CPU·시작프로그램을 한 번에 보는 방식.</p>
+    </header>
+
+    <h2>이런 상황이면</h2>
+    <ul class="pain"><li>부팅하고 5분은 아무것도 못 한다.</li><li>크롬 탭 몇 개 열면 멈춘다.</li><li>포맷하면 낫는다는데, 그전에 원인을 알고 싶다.</li></ul>
+
+    <h2>1. 윈도우 기본 기능으로 (무료·설치 없음)</h2>
+    <p>원인은 보통 넷 중 하나입니다 — RAM 부족, HDD 병목, 시작프로그램, 저장공간. 순서대로 봅니다.</p>
+    <ol class="steps"><li>작업 관리자 (Ctrl + Shift + Esc) → 성능: 메모리가 90% 이상이면 RAM 부족, 디스크 100%가 계속되면 HDD 병목.</li><li>작업 관리자 → 시작 앱: '높음' 영향 항목 중 안 쓰는 것을 '사용 안 함'.</li><li>설정 → 시스템 → 저장소: C: 여유가 10% 미만이면 SSD도 느려집니다.</li><li>설정 → 앱: 모르는 '최적화·클리너' 프로그램이 있으면 삭제. 대부분 원인이지 해결이 아닙니다.</li></ol>
+    <p>여기까지 봤는데도 모르겠다면 부품 문제일 가능성이 큽니다. 어느 부품인지가 다음 질문입니다.</p>
+
+    <h2>2. 컴뚝딱으로 하는 법 (출시 예정)</h2>
+    <p>컴뚝딱 'PC 건강검진'은 출시 예정입니다.</p>
+    <ul><li>RAM·SSD/HDD·CPU·시작프로그램·저장공간을 한 번에 검사</li><li>'느린 이유'를 원인별 카드로 — 부품 문제면 어떤 부품인지, 설정 문제면 어떤 설정인지</li><li>수리가 필요한 경우에만 수리점·부품 연결 안내</li></ul>
+    <div class="callout callout-info"><i data-lucide="info" aria-hidden="true"></i><p>'레지스트리 청소'로 빨라진다는 기능은 넣지 않습니다. 근거가 없는 기능은 만들지 않습니다.</p></div>
+
+    <section class="cta-box" id="notify" aria-label="출시 알림">
+  <div class="status-line"><span class="chip chip-muted"><i data-lucide="clock" aria-hidden="true"></i>준비중</span><h2>출시 예정 · 알림 받기</h2></div>
+  <p>이메일을 받지 않습니다. 대신 GitHub 에서 새 버전 알림을 켜 두면 출시되는 날 GitHub 알림으로 옵니다.</p>
+  <ol class="steps">
+    <li>GitHub 레포 <a href="https://github.com/1215kkm/komttukttak" rel="noopener">1215kkm/komttukttak</a> 를 엽니다.</li>
+    <li>오른쪽 위 <strong>Watch</strong> → <strong>Custom</strong> → <strong>Releases</strong> 만 체크 → Apply.</li>
+    <li>새 버전이 올라오면 GitHub 알림(또는 GitHub 계정 이메일)으로 옵니다. 이미 설치했다면 앱이 자동으로 업데이트됩니다.</li>
+  </ol>
+  <div class="btn-row">
+    <a class="btn btn-primary btn-lg" href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="feature-soon"><i data-lucide="bell" aria-hidden="true"></i>출시 알림 받기</a>
+    <a class="btn btn-outline btn-lg" href="https://github.com/1215kkm/komttukttak" rel="noopener"><i data-lucide="external-link" aria-hidden="true"></i>GitHub 레포 보기</a>
+    <a class="btn btn-outline btn-lg" href="../install"><i data-lucide="shield-question" aria-hidden="true"></i>설치 안내</a>
+  </div>
+  <ul class="trust"><li><i data-lucide="user-x" aria-hidden="true"></i><span>회원가입 없음</span></li><li><i data-lucide="megaphone-off" aria-hidden="true"></i><span>광고 없음</span></li><li><i data-lucide="lock" aria-hidden="true"></i><span>검사 결과는 내 PC 안에만</span></li></ul>
+</section>
+
+    
+
+    <h2>같이 보기</h2>
+    <div class="related"><a class="card card-hover" href="../features/hdd-health"><span class="num">03</span><h3>HDD 건강검진</h3><p>SMART/배드섹터/수명/온도/위험도를 🟢🟡🔴 카드로</p></a><a class="card card-hover" href="../features/duplicate-cleaner"><span class="num">05</span><h3>중복파일 청소기</h3><p>사진/영상/문서 중복 탐색</p></a></div>
+  </article>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 컴뚝딱 · 무료 PC 사양 확인 · PC 도구 16개 순차 공개</p>
+    <div class="links">
+      <a href="../install">설치 안내</a>
+      <a href="../privacy">개인정보처리방침</a>
+      <a href="https://github.com/1215kkm/komttukttak" rel="noopener">GitHub</a>
+      <a href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="footer">출시 알림</a>
+      <a href="https://crownyclass.com/" rel="noopener">CrownyClass</a>
+    </div>
+  </div>
+</footer>
+<script src="../assets/vendor/lucide/lucide.min.js" defer></script>
+<script src="../scripts/site.js" defer></script>
+</body>
+</html>

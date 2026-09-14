@@ -1,0 +1,21 @@
+# Cloudflare Pages 보안 헤더. 인라인 <script> 를 안 쓰므로 script-src 에 'unsafe-inline' 없음.
+# 외부 도메인 0개 — 글꼴·아이콘은 /assets/vendor/ 로컬 번들 (2026-09-14, unpkg·jsdelivr 제거). 새 외부 도메인을 넣으려면 check-site.mjs 의 외부 로드 검사도 함께 고쳐야 한다.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+
+/assets/vendor/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*
+  Cache-Control: public, max-age=604800
+
+/styles/*
+  Cache-Control: public, max-age=86400
+
+/scripts/*
+  Cache-Control: public, max-age=86400

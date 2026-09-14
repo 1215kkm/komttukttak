@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>프린터 인쇄 안 될 때 해결하는 법 — 컴뚝딱</title>
+<meta name="description" content="인쇄 대기열 막힘·오프라인 표시·드라이버 문제를 윈도우 기본 기능으로 푸는 순서. 컴뚝딱 프린터 해결사(출시 예정).">
+<link rel="canonical" href="https://1215kkm.github.io/komttukttak/features/printer-fix">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="컴뚝딱">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="프린터 인쇄 안 될 때 해결하는 법 — 컴뚝딱">
+<meta property="og:description" content="인쇄 대기열 막힘·오프라인 표시·드라이버 문제를 윈도우 기본 기능으로 푸는 순서. 컴뚝딱 프린터 해결사(출시 예정).">
+<meta property="og:url" content="https://1215kkm.github.io/komttukttak/features/printer-fix">
+<meta property="og:image" content="https://1215kkm.github.io/komttukttak/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- naver-site-verification: 네이버 서치어드바이저 등록 후 메타 태그를 여기에 (CEO 결정 후) -->
+<!-- google-site-verification: 구글 서치콘솔 등록 후 메타 태그를 여기에 (CEO 결정 후) -->
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/vendor/pretendard/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/vendor/pretendard/pretendard.css">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://1215kkm.github.io/komttukttak/"},{"@type":"ListItem","position":2,"name":"프린터 해결사","item":"https://1215kkm.github.io/komttukttak/features/printer-fix.html"}]}</script>
+<!-- analytics: CEO 결정 후 (현재 외부 추적 스크립트 없음) -->
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="../" aria-label="컴뚝딱 홈">
+      <span class="logo-mark" aria-hidden="true"><i data-lucide="hammer" aria-hidden="true"></i></span>
+      <span>컴뚝딱</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav"><i data-lucide="menu" aria-hidden="true"></i></button>
+    <nav class="nav" id="site-nav" aria-label="주 메뉴">
+      <a href="../#features" aria-current="page">기능</a>
+      <a href="../blog/pc-spec-check">블로그</a>
+      <a href="../classroom/computer-lab">컴퓨터실</a>
+      <a href="../#faq">FAQ</a>
+      <a href="../install">설치 안내</a>
+      <a class="btn btn-primary" href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="header"><i data-lucide="bell" aria-hidden="true"></i>출시 알림 받기</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<div class="container">
+  <article class="article">
+    <header class="article-head">
+      <ol class="breadcrumb"><li><a href="../">홈</a></li><li><a href="../#features">기능</a></li><li>프린터 해결사</li></ol>
+      <div class="status-line"><span class="chip chip-muted"><i data-lucide="clock" aria-hidden="true"></i>준비중</span><span class="chip chip-purple"><i data-lucide="printer" aria-hidden="true"></i>15 · 프린터 해결사</span></div>
+      <h1>프린터 인쇄 안 될 때 해결하는 법 — 컴뚝딱</h1>
+      <p class="sub">인쇄 대기열 막힘·오프라인 표시·드라이버 문제를 윈도우 기본 기능으로 푸는 순서. 컴뚝딱 프린터 해결사(출시 예정).</p>
+    </header>
+
+    <h2>이런 상황이면</h2>
+    <ul class="pain"><li>'인쇄 중'인데 아무것도 안 나온다.</li><li>프린터가 '오프라인'으로 표시된다.</li><li>어제까지 되던 무선 프린터가 안 잡힌다.</li></ul>
+
+    <h2>1. 윈도우 기본 기능으로 (무료·설치 없음)</h2>
+    <p>열에 여덟은 대기열이 막힌 겁니다. 그것부터.</p>
+    <ol class="steps"><li>설정 → Bluetooth 및 장치 → 프린터 및 스캐너 → 해당 프린터 → 인쇄 대기열 열기 → 모든 문서 취소.</li><li>그래도 막히면: 서비스 (Win + R → services.msc) → Print Spooler 우클릭 → 다시 시작.</li><li>'오프라인': 프린터 전원·Wi-Fi 재연결 후 프린터 속성 → '오프라인으로 프린터 사용' 해제.</li><li>설정 → 시스템 → 문제 해결 → 기타 문제 해결사 → 프린터 실행.</li></ol>
+    <p>이 순서를 외우기 싫으면 버튼 하나로 묶는 게 다음입니다.</p>
+
+    <h2>2. 컴뚝딱으로 하는 법 (출시 예정)</h2>
+    <p>컴뚝딱 '프린터 해결사'는 출시 예정입니다.</p>
+    <ul><li>연결·드라이버·대기열 세 가지를 순서대로 자동 점검</li><li>스풀러 재시작·대기열 비우기는 버튼 하나</li><li>토너·잉크 부족이면 어떤 카트리지인지 표시</li></ul>
+    <div class="callout callout-info"><i data-lucide="info" aria-hidden="true"></i><p>프린터 기종별 펌웨어 문제는 제조사 영역입니다. 그땐 그렇게 말씀드립니다.</p></div>
+
+    <section class="cta-box" id="notify" aria-label="출시 알림">
+  <div class="status-line"><span class="chip chip-muted"><i data-lucide="clock" aria-hidden="true"></i>준비중</span><h2>출시 예정 · 알림 받기</h2></div>
+  <p>이메일을 받지 않습니다. 대신 GitHub 에서 새 버전 알림을 켜 두면 출시되는 날 GitHub 알림으로 옵니다.</p>
+  <ol class="steps">
+    <li>GitHub 레포 <a href="https://github.com/1215kkm/komttukttak" rel="noopener">1215kkm/komttukttak</a> 를 엽니다.</li>
+    <li>오른쪽 위 <strong>Watch</strong> → <strong>Custom</strong> → <strong>Releases</strong> 만 체크 → Apply.</li>
+    <li>새 버전이 올라오면 GitHub 알림(또는 GitHub 계정 이메일)으로 옵니다. 이미 설치했다면 앱이 자동으로 업데이트됩니다.</li>
+  </ol>
+  <div class="btn-row">
+    <a class="btn btn-primary btn-lg" href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="feature-soon"><i data-lucide="bell" aria-hidden="true"></i>출시 알림 받기</a>
+    <a class="btn btn-outline btn-lg" href="https://github.com/1215kkm/komttukttak" rel="noopener"><i data-lucide="external-link" aria-hidden="true"></i>GitHub 레포 보기</a>
+    <a class="btn btn-outline btn-lg" href="../install"><i data-lucide="shield-question" aria-hidden="true"></i>설치 안내</a>
+  </div>
+  <ul class="trust"><li><i data-lucide="user-x" aria-hidden="true"></i><span>회원가입 없음</span></li><li><i data-lucide="megaphone-off" aria-hidden="true"></i><span>광고 없음</span></li><li><i data-lucide="lock" aria-hidden="true"></i><span>검사 결과는 내 PC 안에만</span></li></ul>
+</section>
+
+    
+
+    <h2>같이 보기</h2>
+    <div class="related"><a class="card card-hover" href="../features/game-pc-check"><span class="num">14</span><h3>게임 PC 진단기</h3><p>FPS 저하/온도/병목/드라이버 분석</p></a><a class="card card-hover" href="../features/bulk-pc-spec"><span class="num">16</span><h3>PC 사양 일괄 확인</h3><p>학생 PC 사양·Windows 버전·저장공간·IP·PC 이름·프로그램 설치 여부를 여러 대 한 번에</p></a></div>
+  </article>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 컴뚝딱 · 무료 PC 사양 확인 · PC 도구 16개 순차 공개</p>
+    <div class="links">
+      <a href="../install">설치 안내</a>
+      <a href="../privacy">개인정보처리방침</a>
+      <a href="https://github.com/1215kkm/komttukttak" rel="noopener">GitHub</a>
+      <a href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="footer">출시 알림</a>
+      <a href="https://crownyclass.com/" rel="noopener">CrownyClass</a>
+    </div>
+  </div>
+</footer>
+<script src="../assets/vendor/lucide/lucide.min.js" defer></script>
+<script src="../scripts/site.js" defer></script>
+</body>
+</html>

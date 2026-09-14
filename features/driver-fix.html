@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>드라이버 오류 해결하는 법 (장치 관리자 노란 느낌표) — 컴뚝딱</title>
+<meta name="description" content="장치 관리자 노란 느낌표·오류 코드 28/43/10의 뜻과, 윈도우 업데이트·제조사 사이트·롤백으로 고치는 법. 컴뚝딱 드라이버 문제 해결사(출시 예정).">
+<link rel="canonical" href="https://1215kkm.github.io/komttukttak/features/driver-fix">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="컴뚝딱">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="드라이버 오류 해결하는 법 (장치 관리자 노란 느낌표) — 컴뚝딱">
+<meta property="og:description" content="장치 관리자 노란 느낌표·오류 코드 28/43/10의 뜻과, 윈도우 업데이트·제조사 사이트·롤백으로 고치는 법. 컴뚝딱 드라이버 문제 해결사(출시 예정).">
+<meta property="og:url" content="https://1215kkm.github.io/komttukttak/features/driver-fix">
+<meta property="og:image" content="https://1215kkm.github.io/komttukttak/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- naver-site-verification: 네이버 서치어드바이저 등록 후 메타 태그를 여기에 (CEO 결정 후) -->
+<!-- google-site-verification: 구글 서치콘솔 등록 후 메타 태그를 여기에 (CEO 결정 후) -->
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/vendor/pretendard/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/vendor/pretendard/pretendard.css">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://1215kkm.github.io/komttukttak/"},{"@type":"ListItem","position":2,"name":"드라이버 문제 해결사","item":"https://1215kkm.github.io/komttukttak/features/driver-fix.html"}]}</script>
+<!-- analytics: CEO 결정 후 (현재 외부 추적 스크립트 없음) -->
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="../" aria-label="컴뚝딱 홈">
+      <span class="logo-mark" aria-hidden="true"><i data-lucide="hammer" aria-hidden="true"></i></span>
+      <span>컴뚝딱</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-nav"><i data-lucide="menu" aria-hidden="true"></i></button>
+    <nav class="nav" id="site-nav" aria-label="주 메뉴">
+      <a href="../#features" aria-current="page">기능</a>
+      <a href="../blog/pc-spec-check">블로그</a>
+      <a href="../classroom/computer-lab">컴퓨터실</a>
+      <a href="../#faq">FAQ</a>
+      <a href="../install">설치 안내</a>
+      <a class="btn btn-primary" href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="header"><i data-lucide="bell" aria-hidden="true"></i>출시 알림 받기</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<div class="container">
+  <article class="article">
+    <header class="article-head">
+      <ol class="breadcrumb"><li><a href="../">홈</a></li><li><a href="../#features">기능</a></li><li>드라이버 문제 해결사</li></ol>
+      <div class="status-line"><span class="chip chip-muted"><i data-lucide="clock" aria-hidden="true"></i>준비중</span><span class="chip chip-purple"><i data-lucide="plug" aria-hidden="true"></i>07 · 드라이버 문제 해결사</span></div>
+      <h1>드라이버 오류 해결하는 법 (장치 관리자 노란 느낌표) — 컴뚝딱</h1>
+      <p class="sub">장치 관리자 노란 느낌표·오류 코드 28/43/10의 뜻과, 윈도우 업데이트·제조사 사이트·롤백으로 고치는 법. 컴뚝딱 드라이버 문제 해결사(출시 예정).</p>
+    </header>
+
+    <h2>이런 상황이면</h2>
+    <ul class="pain"><li>장치 관리자에 노란 느낌표가 떠 있다.</li><li>소리·와이파이·USB가 갑자기 안 된다.</li><li>'드라이버 자동 설치' 프로그램을 깔았더니 광고와 유료 결제만 나온다.</li></ul>
+
+    <h2>1. 윈도우 기본 기능으로 (무료·설치 없음)</h2>
+    <p>제3자 '드라이버 업데이트 프로그램'은 피하세요. 윈도우와 제조사 사이트, 두 곳이면 됩니다.</p>
+    <ol class="steps"><li>장치 관리자 (Win + X → 장치 관리자): 느낌표 장치 우클릭 → 속성 → '장치 상태'의 코드 확인. 28 = 드라이버 없음, 43 = 장치 오류 보고, 10 = 시작 불가.</li><li>설정 → Windows 업데이트 → 고급 옵션 → 선택적 업데이트: 드라이버 항목이 있으면 설치.</li><li>제조사 사이트(노트북 모델명 / 메인보드 모델명으로 검색)에서 직접 받기.</li><li>최근에 고장났다면: 속성 → 드라이버 탭 → '드라이버 롤백'.</li></ol>
+    <p>어느 장치가 어느 드라이버인지 이름부터 낯설다면, 그 식별이 다음 단계입니다.</p>
+
+    <h2>2. 컴뚝딱으로 하는 법 (출시 예정)</h2>
+    <p>컴뚝딱 '드라이버 문제 해결사'는 출시 예정입니다.</p>
+    <ul><li>오류 장치와 코드를 한글로 풀어서 보여 주기</li><li>필요한 드라이버의 정확한 이름과 제조사 페이지 식별 (설치 파일을 대신 받아 오지는 않습니다)</li><li>롤백이 가능한 경우 안내</li></ul>
+    <div class="callout callout-warning"><i data-lucide="triangle-alert" aria-hidden="true"></i><p>출처 모를 드라이버 묶음을 자동 설치하지 않습니다. 잘못 깔린 드라이버는 부팅 실패까지 갑니다.</p></div>
+
+    <section class="cta-box" id="notify" aria-label="출시 알림">
+  <div class="status-line"><span class="chip chip-muted"><i data-lucide="clock" aria-hidden="true"></i>준비중</span><h2>출시 예정 · 알림 받기</h2></div>
+  <p>이메일을 받지 않습니다. 대신 GitHub 에서 새 버전 알림을 켜 두면 출시되는 날 GitHub 알림으로 옵니다.</p>
+  <ol class="steps">
+    <li>GitHub 레포 <a href="https://github.com/1215kkm/komttukttak" rel="noopener">1215kkm/komttukttak</a> 를 엽니다.</li>
+    <li>오른쪽 위 <strong>Watch</strong> → <strong>Custom</strong> → <strong>Releases</strong> 만 체크 → Apply.</li>
+    <li>새 버전이 올라오면 GitHub 알림(또는 GitHub 계정 이메일)으로 옵니다. 이미 설치했다면 앱이 자동으로 업데이트됩니다.</li>
+  </ol>
+  <div class="btn-row">
+    <a class="btn btn-primary btn-lg" href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="feature-soon"><i data-lucide="bell" aria-hidden="true"></i>출시 알림 받기</a>
+    <a class="btn btn-outline btn-lg" href="https://github.com/1215kkm/komttukttak" rel="noopener"><i data-lucide="external-link" aria-hidden="true"></i>GitHub 레포 보기</a>
+    <a class="btn btn-outline btn-lg" href="../install"><i data-lucide="shield-question" aria-hidden="true"></i>설치 안내</a>
+  </div>
+  <ul class="trust"><li><i data-lucide="user-x" aria-hidden="true"></i><span>회원가입 없음</span></li><li><i data-lucide="megaphone-off" aria-hidden="true"></i><span>광고 없음</span></li><li><i data-lucide="lock" aria-hidden="true"></i><span>검사 결과는 내 PC 안에만</span></li></ul>
+</section>
+
+    
+
+    <h2>같이 보기</h2>
+    <div class="related"><a class="card card-hover" href="../features/pc-migration"><span class="num">06</span><h3>PC 이사</h3><p>기존 PC → 새 PC 데이터 이전</p></a><a class="card card-hover" href="../features/network-diag"><span class="num">08</span><h3>인터넷 문제 진단기</h3><p>Wi-Fi/랜/DNS/핑/패킷손실 분석</p></a></div>
+  </article>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 컴뚝딱 · 무료 PC 사양 확인 · PC 도구 16개 순차 공개</p>
+    <div class="links">
+      <a href="../install">설치 안내</a>
+      <a href="../privacy">개인정보처리방침</a>
+      <a href="https://github.com/1215kkm/komttukttak" rel="noopener">GitHub</a>
+      <a href="https://github.com/1215kkm/komttukttak/releases" rel="noopener" data-cta="footer">출시 알림</a>
+      <a href="https://crownyclass.com/" rel="noopener">CrownyClass</a>
+    </div>
+  </div>
+</footer>
+<script src="../assets/vendor/lucide/lucide.min.js" defer></script>
+<script src="../scripts/site.js" defer></script>
+</body>
+</html>

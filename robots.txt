@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /komttukttak/content/
+Disallow: /komttukttak/templates/
+
+Sitemap: https://1215kkm.github.io/komttukttak/sitemap.xml
