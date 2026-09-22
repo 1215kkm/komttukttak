@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>게임 프레임 떨어질 때 원인 찾는 법 — 컴뚝딱</title>
-<meta name="description" content="게임 바·작업 관리자·온도로 FPS 저하의 병목(CPU/GPU/RAM/온도/드라이버)을 찾는 법. 컴뚝딱 게임 PC 진단기(출시 예정).">
-<link rel="canonical" href="https://1215kkm.github.io/komttukttak/features/game-pc-check">
+<title>포토샵에서 같은 작업 반복할 때 (선택 영역 저장·SNS 크기 변환) — 컴뚝딱</title>
+<meta name="description" content="포토샵의 선택 영역 저장, 크기 변환, 워터마크, 배경 만들기를 액션 녹화와 일괄 처리로 하는 법과, 컴뚝딱 포토샵 도우미(출시 예정)가 [파일 &gt; 스크립트] 메뉴에서 같은 일을 하는 법.">
+<link rel="canonical" href="https://1215kkm.github.io/komttukttak/features/photoshop-helper">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="컴뚝딱">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="게임 프레임 떨어질 때 원인 찾는 법 — 컴뚝딱">
-<meta property="og:description" content="게임 바·작업 관리자·온도로 FPS 저하의 병목(CPU/GPU/RAM/온도/드라이버)을 찾는 법. 컴뚝딱 게임 PC 진단기(출시 예정).">
-<meta property="og:url" content="https://1215kkm.github.io/komttukttak/features/game-pc-check">
+<meta property="og:title" content="포토샵에서 같은 작업 반복할 때 (선택 영역 저장·SNS 크기 변환) — 컴뚝딱">
+<meta property="og:description" content="포토샵의 선택 영역 저장, 크기 변환, 워터마크, 배경 만들기를 액션 녹화와 일괄 처리로 하는 법과, 컴뚝딱 포토샵 도우미(출시 예정)가 [파일 &gt; 스크립트] 메뉴에서 같은 일을 하는 법.">
+<meta property="og:url" content="https://1215kkm.github.io/komttukttak/features/photoshop-helper">
 <meta property="og:image" content="https://1215kkm.github.io/komttukttak/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="../assets/vendor/pretendard/pretendard.css">
 <link rel="stylesheet" href="../styles/tokens.css">
 <link rel="stylesheet" href="../styles/site.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://1215kkm.github.io/komttukttak/"},{"@type":"ListItem","position":2,"name":"게임 PC 진단기","item":"https://1215kkm.github.io/komttukttak/features/game-pc-check.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://1215kkm.github.io/komttukttak/"},{"@type":"ListItem","position":2,"name":"포토샵 도우미","item":"https://1215kkm.github.io/komttukttak/features/photoshop-helper.html"}]}</script>
 <!-- analytics: CEO 결정 후 (현재 외부 추적 스크립트 없음) -->
 </head>
 <body>
@@ -51,24 +51,24 @@
 <div class="container">
   <article class="article">
     <header class="article-head">
-      <ol class="breadcrumb"><li><a href="../">홈</a></li><li><a href="../#features">기능</a></li><li>게임 PC 진단기</li></ol>
-      <div class="status-line"><span class="chip chip-muted"><i data-lucide="clock" aria-hidden="true"></i>준비중</span><span class="chip chip-purple"><i data-lucide="gamepad-2" aria-hidden="true"></i>14 · 게임 PC 진단기</span></div>
-      <h1>게임 프레임 떨어질 때 원인 찾는 법 — 컴뚝딱</h1>
-      <p class="sub">게임 바·작업 관리자·온도로 FPS 저하의 병목(CPU/GPU/RAM/온도/드라이버)을 찾는 법. 컴뚝딱 게임 PC 진단기(출시 예정).</p>
+      <ol class="breadcrumb"><li><a href="../">홈</a></li><li><a href="../#features">기능</a></li><li>포토샵 도우미</li></ol>
+      <div class="status-line"><span class="chip chip-muted"><i data-lucide="clock" aria-hidden="true"></i>준비중</span><span class="chip chip-purple"><i data-lucide="image-plus" aria-hidden="true"></i>17 · 포토샵 도우미</span></div>
+      <h1>포토샵에서 같은 작업 반복할 때 (선택 영역 저장·SNS 크기 변환) — 컴뚝딱</h1>
+      <p class="sub">포토샵의 선택 영역 저장, 크기 변환, 워터마크, 배경 만들기를 액션 녹화와 일괄 처리로 하는 법과, 컴뚝딱 포토샵 도우미(출시 예정)가 [파일 &gt; 스크립트] 메뉴에서 같은 일을 하는 법.</p>
     </header>
 
     <h2>이런 상황이면</h2>
-    <ul class="pain"><li>예전엔 잘 되던 게임이 갑자기 끊긴다.</li><li>그래픽카드를 바꿔야 하는지 램을 늘려야 하는지 모르겠다.</li><li>노트북이 뜨거워지면 느려진다.</li></ul>
+    <ul class="pain"><li>인스타·유튜브·블로그마다 크기가 달라 같은 사진을 세 번 저장한다.</li><li>선택 영역을 잡아 PNG 로 빼내는 일을 하루에 스무 번 한다.</li><li>로고를 늘 같은 자리·같은 크기로 넣어야 하는데 매번 눈대중이다.</li></ul>
 
     <h2>1. 윈도우 기본 기능으로 (무료·설치 없음)</h2>
-    <p>게임 중에 CPU와 GPU 중 뭐가 100%인지만 보면 병목이 나옵니다.</p>
-    <ol class="steps"><li>게임 바 (Win + G) → 성능 위젯: 게임 중 CPU·GPU·RAM 사용률과 FPS.</li><li>GPU 100%·CPU 여유 = 그래픽카드 병목 / CPU 100%·GPU 여유 = CPU 병목 / RAM 90% 이상 = 메모리 부족.</li><li>온도: 작업 관리자 → 성능 → GPU 온도. 85°C 이상이 계속되면 먼지·서멀 문제.</li><li>그래픽 드라이버: 제조사(NVIDIA/AMD/Intel) 앱에서 최신으로.</li></ol>
-    <p>게임하면서 숫자 네 개를 동시에 보는 게 문제죠. 기록해 뒀다가 보는 게 다음입니다.</p>
+    <p>포토샵에 들어 있는 액션(Action)과 일괄 처리로 어느 정도는 됩니다. 설치할 것은 없습니다.</p>
+    <ol class="steps"><li>액션 녹화: 창 &gt; 액션 → 새 액션 → 기록(빨간 점) → 할 일을 한 번 직접 하고 정지. 다음부터는 재생 버튼 하나.</li><li>여러 장에 같은 액션: 파일 &gt; 자동화 &gt; 일괄 처리(Batch)에서 폴더와 액션을 고릅니다.</li><li>크기 변환: 이미지 &gt; 이미지 크기(Alt + Ctrl + I). 비율을 유지한 채 긴 변 기준으로 맞춥니다.</li><li>선택 영역만 저장: 선택 → Ctrl + C → 파일 &gt; 새로 만들기(클립보드 크기로 열립니다) → 붙여넣고 저장.</li></ol>
+    <p>액션은 같은 순서에는 강하지만, 이번엔 정사각형·다음엔 세로형처럼 조건이 바뀌면 액션을 여러 개 만들어 관리하게 됩니다.</p>
 
     <h2>2. 컴뚝딱으로 하는 법 (출시 예정)</h2>
-    <p>컴뚝딱 '게임 PC 진단기'는 출시 예정입니다.</p>
-    <ul><li>게임 실행 중 1분 기록 → 병목이 어디인지 카드 한 장</li><li>온도·스로틀링(과열로 속도 제한) 여부 표시</li><li>부품 업그레이드가 답일 때만 어떤 부품인지 안내</li></ul>
-    <div class="callout callout-info"><i data-lucide="info" aria-hidden="true"></i><p>&quot;이 부품 사면 FPS 2배&quot; 같은 수치 약속은 하지 않습니다.</p></div>
+    <p>컴뚝딱 '포토샵 도우미'는 준비 중입니다. 앱이 포토샵의 [파일 &gt; 스크립트] 메뉴에 컴뚝딱 항목을 설치해 두고, 앱 화면에서도 같은 동작을 부를 수 있게 하는 기능입니다.</p>
+    <ul><li>선택 영역 저장 — 지금 잡아 둔 선택 영역만 PNG/JPG 파일로 빼내기</li><li>선택 영역 안 내용 지우기 — 안에서 여러 단계를 거쳐도 포토샵 히스토리에는 한 칸으로 남아 Ctrl + Z 한 번이면 되돌아갑니다</li><li>SNS 크기 변환 — 인스타 정사각·세로·스토리, 유튜브 썸네일, 스마트스토어, 블로그 가로 같은 규격으로 여러 장 한 번에</li><li>워터마크 — 로고나 글자를 여러 장에 같은 자리·같은 크기로</li><li>배경 템플릿 — 단색·그라데이션·패턴 배경을 원하는 크기로 만들기</li><li>아이콘 넣기 — 아이콘·로고를 정한 자리에 같은 크기로 배치</li></ul>
+    <div class="callout callout-info"><i data-lucide="info" aria-hidden="true"></i><p>준비 중인 기능입니다. 포토샵에 붙는 동작은 포토샵 CS6 이상에서 되고, 크기 변환과 배경 만들기는 포토샵이 없어도 컴뚝딱 안에서 됩니다. 아이콘을 받을 때 인터넷에 접속하며 무엇이 오가는지는 개인정보처리방침 2번에 적었습니다.</p></div>
 
     <section class="cta-box" id="notify" aria-label="출시 알림">
   <div class="status-line"><span class="chip chip-muted"><i data-lucide="clock" aria-hidden="true"></i>준비중</span><h2>출시 예정 · 알림 받기</h2></div>
@@ -89,7 +89,7 @@
     
 
     <h2>같이 보기</h2>
-    <div class="related"><a class="card card-hover" href="../features/windows-error"><span class="num">13</span><h3>Windows 오류 해결사</h3><p>오류코드 분석 → 해결법 → 자동수정</p></a><a class="card card-hover" href="../features/printer-fix"><span class="num">15</span><h3>프린터 해결사</h3><p>연결/드라이버/인쇄대기열 자동진단</p></a></div>
+    <div class="related"><a class="card card-hover" href="../features/bulk-pc-spec"><span class="num">16</span><h3>PC 사양 일괄 확인</h3><p>학생 PC 사양·Windows 버전·저장공간·IP·PC 이름·프로그램 설치 여부를 여러 대 한 표로 — 서버·설치 없이</p></a></div>
   </article>
 </div>
 

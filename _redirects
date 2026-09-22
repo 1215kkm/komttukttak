@@ -1,6 +1,6 @@
 # 생성물 — scripts/build-pages.mjs 가 site.json(released) 기준으로 다시 쓴다. 직접 고치지 말 것.
-# 블로그·SNS 에 짧게 적을 수 있는 다운로드 주소 하나. released:false → releases 목록(출시 알림)
-/download  https://github.com/1215kkm/komttukttak/releases  302
+# 블로그·SNS 에 짧게 적을 수 있는 다운로드 주소 하나. released:true → releases/latest
+/download  https://github.com/1215kkm/komttukttak/releases/latest/download/komttukttak-setup.exe  302
 # 빌드·원본 폴더는 공개 안 함
 /content/*    /  404
 /templates/*  /  404
