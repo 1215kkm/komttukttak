@@ -1,0 +1,34 @@
+# 매일 받아 간 수 기록 — GitHub 가 세는 릴리스 파일 다운로드 수(누적)를 하루 한 번 stats 브랜치에 한 줄씩 남긴다.
+# 하루 차이 = 그날 받은 수. 앱 사용 통계가 아니다 (앱은 아무것도 보내지 않는다).
+#   komttukttak-setup.exe : 새 설치 + 자동 업데이트로 받은 수
+#   latest.json           : 앱이 켜질 때 업데이트를 확인한 수 (= 대략 앱을 켠 횟수)
+name: download-stats
+on:
+  schedule:
+    - cron: '10 15 * * *'   # 매일 00:10 (한국 시각)
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 오늘 숫자 가져오기
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api repos/${{ github.repository }}/releases --paginate \
+            --jq '[.[] | {tag: .tag_name, published: .published_at, assets: ([.assets[] | {(.name): .download_count}] | add)}]' \
+            | jq -s 'add' > releases.json
+          jq -c --arg at "$(date -u +%Y-%m-%dT%H:%M:%SZ)" '{at: $at, releases: .}' releases.json > line.json
+      - name: stats 브랜치에 한 줄 덧붙이기
+        run: |
+          git config --global user.name "stats-bot"
+          git config --global user.email "stats-bot@users.noreply.github.com"
+          if git ls-remote --exit-code https://github.com/${{ github.repository }}.git stats >/dev/null; then
+            git clone -q --depth 1 --branch stats https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git s
+          else
+            mkdir s && cd s && git init -q && git checkout -q -b stats && git remote add origin https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git && cd ..
+          fi
+          cat line.json >> s/downloads.jsonl
+          cd s && git add downloads.jsonl && git commit -q -m "stats $(date -u +%F)" && git push -q origin stats
