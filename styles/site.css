@@ -106,8 +106,8 @@ pre code { background: transparent; color: inherit; padding: 0; }
 .hero-duo h1, .duo-card h2, .duo-hook, .duo-list, .duo-foot { word-break: keep-all; overflow-wrap: anywhere; }
 .duo { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); }
 .duo-card { display: flex; flex-direction: column; gap: var(--spacing-sm); padding: var(--spacing-xl); border-radius: var(--radius-2xl); border: var(--border); background: var(--light-card); box-shadow: var(--shadow-lg); color: var(--text-dark); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
-.duo-card:hover { transform: translateY(-4px); border-color: var(--primary); }
-.duo-card:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+.duo-btn { align-self: stretch; justify-content: center; margin-top: var(--spacing-md); }
+.duo-btn svg { width: 18px; height: 18px; margin-left: 6px; }
 .duo-ic { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: var(--radius-lg); background: linear-gradient(135deg, var(--primary), var(--secondary)); color: var(--text-primary); }
 .duo-ic svg { width: 30px; height: 30px; }
 .duo-card h2 { margin: var(--spacing-xs) 0 0; font-size: var(--font-2xl, 1.75rem); }
@@ -119,7 +119,6 @@ pre code { background: transparent; color: inherit; padding: 0; }
 .duo-list span { color: var(--text-muted); }
 .duo-foot { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin: auto 0 0; padding-top: var(--spacing-md); border-top: var(--border); font-size: var(--font-sm); color: var(--text-muted); }
 .duo-foot svg { width: 16px; height: 16px; }
-.duo-more { margin-left: auto; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; color: var(--primary); }
 .duo-cta { display: flex; flex-direction: column; align-items: center; gap: var(--spacing-md); margin-top: var(--spacing-xl); }
 .duo-cta .btn-row { justify-content: center; }
 .trust { display: flex; flex-wrap: wrap; gap: var(--spacing-sm) var(--spacing-lg); margin: var(--spacing-md) 0 0; padding: 0; list-style: none; color: var(--text-muted); }
