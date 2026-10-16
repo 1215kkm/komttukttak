@@ -244,3 +244,16 @@ pre code { background: transparent; color: inherit; padding: 0; }
 .figure .diagram { width: 100%; height: auto; display: block; border-radius: var(--radius-xl); box-shadow: var(--shadow-md); }
 .figure figcaption { display: flex; align-items: flex-start; gap: var(--spacing-xs); margin-top: var(--spacing-sm); font-size: var(--font-sm); color: var(--text-muted); }
 .figure figcaption svg { width: 16px; height: 16px; flex: 0 0 16px; margin-top: 3px; }
+
+/* 10-16 기능 페이지 — 앱과 같은 아이콘을 붙인 기능 목록 */
+.ipoints { list-style: none; padding: 0; margin: var(--spacing-md) 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px var(--spacing-lg); }
+.ipoints .ipt-group { grid-column: 1 / -1; margin-top: var(--spacing-md); padding-bottom: 6px; border-bottom: var(--border); font-weight: 700; color: var(--text-dark); }
+.ipoints .ipt-group:first-child { margin-top: 0; }
+.ipoints .ipt { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 12px; align-items: start; line-height: 1.6; color: var(--text-muted); word-break: keep-all; overflow-wrap: anywhere; }
+.ipoints .ipt b { display: block; color: var(--text-dark); font-size: var(--font-md, 1rem); margin-bottom: 2px; }
+.ipoints .ipt-ic { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--radius-md); background: rgba(var(--primary-rgb), 0.10); color: var(--primary-dark); }
+.ipoints .ipt-ic svg { width: 22px; height: 22px; }
+@media (max-width: 760px) { .ipoints { grid-template-columns: 1fr; } }
+
+/* 10-16 긴 경로(%APPDATA%\...)가 폰에서 옆으로 밀리지 않게 */
+code { overflow-wrap: anywhere; }
