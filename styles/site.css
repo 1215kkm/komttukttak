@@ -99,13 +99,32 @@ pre code { background: transparent; color: inherit; padding: 0; }
 .hero .container { display: grid; grid-template-columns: 1.1fr 1fr; gap: var(--spacing-xl); align-items: center; }
 .hero h1 { margin-top: var(--spacing-md); }
 .hero .sub { font-size: var(--font-lg); color: var(--text-muted); }
+/* 2026-10-16 CEO "포토샵, 파일복구 2가지를 좌우로 크게" — 제목 한 줄 + 두 카드 + 받기 버튼 */
+.hero-duo .container { display: block; }
+.hero-duo .duo-head { text-align: center; max-width: 760px; margin: 0 auto var(--spacing-xl); }
+.hero-duo .duo-head h1 { margin-top: var(--spacing-md); }
+.hero-duo h1, .duo-card h2, .duo-hook, .duo-list, .duo-foot { word-break: keep-all; overflow-wrap: anywhere; }
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); }
+.duo-card { display: flex; flex-direction: column; gap: var(--spacing-sm); padding: var(--spacing-xl); border-radius: var(--radius-2xl); border: var(--border); background: var(--light-card); box-shadow: var(--shadow-lg); color: var(--text-dark); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.duo-card:hover { transform: translateY(-4px); border-color: var(--primary); }
+.duo-card:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+.duo-ic { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: var(--radius-lg); background: linear-gradient(135deg, var(--primary), var(--secondary)); color: var(--text-primary); }
+.duo-ic svg { width: 30px; height: 30px; }
+.duo-card h2 { margin: var(--spacing-xs) 0 0; font-size: var(--font-2xl, 1.75rem); }
+.duo-hook { margin: 0; font-size: var(--font-lg); font-weight: 600; color: var(--primary); }
+.duo-list { list-style: none; margin: var(--spacing-sm) 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.duo-list li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; align-items: start; line-height: 1.5; }
+.duo-list svg { width: 20px; height: 20px; margin-top: 2px; color: var(--primary); }
+.duo-list b { color: var(--text-dark); }
+.duo-list span { color: var(--text-muted); }
+.duo-foot { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin: auto 0 0; padding-top: var(--spacing-md); border-top: var(--border); font-size: var(--font-sm); color: var(--text-muted); }
+.duo-foot svg { width: 16px; height: 16px; }
+.duo-more { margin-left: auto; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; color: var(--primary); }
+.duo-cta { display: flex; flex-direction: column; align-items: center; gap: var(--spacing-md); margin-top: var(--spacing-xl); }
+.duo-cta .btn-row { justify-content: center; }
 .trust { display: flex; flex-wrap: wrap; gap: var(--spacing-sm) var(--spacing-lg); margin: var(--spacing-md) 0 0; padding: 0; list-style: none; color: var(--text-muted); }
 .trust li { display: inline-flex; align-items: center; gap: var(--spacing-xs); }
 .trust svg { width: 18px; height: 18px; color: var(--success); }
-.preview { background: var(--light-card); border: var(--border); border-radius: var(--radius-2xl); box-shadow: var(--shadow-lg); padding: var(--spacing-md); }
-.preview-title { display: flex; align-items: center; gap: var(--spacing-sm); font-weight: 600; margin-bottom: var(--spacing-sm); }
-.preview-title svg { width: 18px; height: 18px; color: var(--primary); }
-.preview .preview-img { width: 100%; height: auto; border-radius: var(--radius-lg); }
 
 /* ===== 어떻게 검사하나요 3타일 ===== */
 .how { display: grid; gap: var(--spacing-lg); grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
@@ -205,6 +224,8 @@ pre code { background: transparent; color: inherit; padding: 0; }
 /* ===== 반응형 (색·폰트 동일, 레이아웃만) ===== */
 @media (max-width: 900px) {
   .hero .container { grid-template-columns: 1fr; }
+  .duo { grid-template-columns: 1fr; }
+  .duo-card { padding: var(--spacing-lg); }
   .band-dark { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
@@ -217,9 +238,6 @@ pre code { background: transparent; color: inherit; padding: 0; }
   h1 { font-size: var(--font-2xl); }
 }
 
-/* ===== hero 미리보기 캡션 — 목업임을 밝힘. 실제 스크린샷으로 교체하면 home.mjs 에서 함께 제거 ===== */
-.preview-caption { display: flex; align-items: center; gap: var(--spacing-xs); margin: 0 0 var(--spacing-sm); font-size: var(--font-xs); color: var(--text-muted); }
-.preview-caption svg { width: 16px; height: 16px; flex: 0 0 16px; }
 
 /* 설치 안내 도식 (install.html) — 스크린샷 대신 SVG. 색은 SVG 안에서 var() 로만 */
 .figure { margin: 0 0 var(--spacing-lg); }
